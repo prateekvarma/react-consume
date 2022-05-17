@@ -19,8 +19,8 @@ function App({ login }) {
 
   if(loading) return <h1>Loading...</h1>;
   if(error) return <pre>{JSON.stringify(error, null, 2)}</pre>;
+  if(!data) return null;
 
-  if(data){
   return (
     <div className="App">
       <h1>Username: {data.name}</h1>
@@ -28,9 +28,7 @@ function App({ login }) {
       <img src={data.avatar_url} alt={data.login} />
     </div>
   );
-  }
 
-  return <div>No user available</div>;
 }
 
 export default App;
